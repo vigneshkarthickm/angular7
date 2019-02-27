@@ -1,0 +1,41 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+
+    <input formControlName="name" placeholder="Your name">
+  
+    <p>Your choosen name: {{ myForm.get('name').value }}</p>
+
+
+    <div *ngIf="myForm.get('name').hasError('required')"> Oops, please provide a name!</div>
+  
+    <input formControlName="email" placeholder="Your email">
+  
+    <!-- <div *ngIf="myForm.get.email.hasError('pattern')">Oops, wrong pattern buddy!</div> -->
+
+    <div *ngIf="myForm.get('email').hasError('pattern')">Oops, wrong pattern buddy!</div>
+
+    <input formControlName="message" placeholder="Your message">
+  
+    <!-- <div *ngIf="myForm.controls.message.errors.minlength"> Write something longer please!</div> -->
+
+    <div *ngIf="myForm.get('message').hasError('minLength')"> Write something longer please!</div>
+  
+    <button type="submit" [disabled]="myForm.invalid">Send</button>
+    
+  </form>
+
+  <div class="" >
+      
+  <Label>{{Name}}</Label> <br>
+  <label>{{Age}}</label> <br>
+  <label>{{colors}}</label> <br>
+  <label>{{profile.name}}</label> <br>
+  <!-- <li *ngFor="let coll of collection; let i = index"><span *ngIf="i>=0">{{i}} - {{coll.age}}</span></li> -->
+
+  <li *ngFor="let coll of collection; let i = index"><input type="text" [(ngModel)]='coll.name'> </li>
+  
+  <pre>{{collection[1].age}}</pre>
+
+  <li *ngFor="let coll of collection; let i = index"><span> {{coll.name}} </span>
+
+
+ 

@@ -1,0 +1,25 @@
+<div class="">
+
+    <table class="table table-bordered">
+        <thead>
+      
+          <tr>
+            <td style="font-size:20px;">Brand</td>
+            <td style="font-size:20px;">Ram</td>
+            <td style="font-size:20px;">Display Inch</td>
+          </tr>
+        </thead>
+      
+      <tbody>
+        <tr *ngFor="let spec of mobileCollection; let i=index">
+          <td><input type="text" [(ngModel)]="spec.brand" /></td>
+          <td><input type="text" [(ngModel)]="spec.ram" /></td>
+          <td><input type="text" [(ngModel)]="spec.screen" /></td>
+        </tr>
+        <button class="btn-primary" (click)="addMobile(i)">Add Mobile</button>
+      </tbody>
+     
+      </table>
+
+
+</div>

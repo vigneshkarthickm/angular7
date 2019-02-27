@@ -1,0 +1,145 @@
+<div class="container-fluid">
+<header>
+Vignesh A5
+</header>
+
+<div class="col-md-12 col-lg-12">
+    <div class="col-md-3" class="box-left">
+
+  <div class="bs-example">
+      <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" (click)="concept='intro'">1. Angular 5 Basics</a>
+                  </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="panel-body">
+
+                    <li> One Way Binding </li>
+                    <li> Two way Binding </li>
+                      
+                  </div>
+              </div>
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" (click)="concept='ngfor'">2. Itteration</a>
+                  </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="panel-body">
+                     
+                    <li> One Way Binding using ngFor </li>
+                    <li> Two way Binding using ngFor</li>
+
+                  </div>
+              </div>
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="panel-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" (click)="concept='dynamic'">Dynamic data</a>
+                  </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse">
+                  <div class="panel-body">
+                      Add Row Dynamically
+                  </div>
+              </div>
+          </div>
+      </div>
+    <p><strong>Note:</strong> Click on the linked heading text to expand or collapse accordion panels.</p>
+  </div>
+</div>
+
+
+<div class="col-md-9" class="box-right">
+
+<div class="" *ngIf= "concept=='intro'">
+
+<h4>Two way Binding</h4>
+
+    <label for="usr">Name:</label>
+    <input type="text" class="form-control" id="usr" [(ngModel)]="name">
+
+<h4>  one way binding </h4> 
+    {{name}}
+</div>
+
+<div *ngIf= "concept=='ngfor'">
+
+  <h4>Two Way binding </h4>
+
+  <table class="table table-bordered">
+      <thead>
+    
+        <tr>
+          <td style="font-size:20px;">Brand</td>
+          <td style="font-size:20px;">Ram</td>
+          <td style="font-size:20px;">Display Inch</td>
+        </tr>
+      </thead>
+    
+    <tbody *ngFor="let spec of mobileCollection">
+      <tr>
+        <td><input type="text" [(ngModel)]="spec.brand" /></td>
+        <td><input type="text" [(ngModel)]="spec.ram" /></td>
+        <td><input type="text" [(ngModel)]="spec.screen" /></td>
+      </tr>
+    </tbody>
+    
+    </table>
+    
+
+
+  <h4>  One Way binding</h4>
+<table class="table table-bordered">
+  <thead>
+
+    <tr>
+      <td style="font-size:20px;">Brand</td>
+      <td style="font-size:20px;">Ram</td>
+      <td style="font-size:20px;">Display Inch</td>
+    </tr>
+  </thead>
+
+<tbody *ngFor="let spec of mobileCollection">
+  <tr>
+    <td>{{spec.brand}}</td>
+    <td>{{spec.ram}}</td>
+    <td>{{spec.screen}}</td>
+  </tr>
+</tbody>
+
+</table>
+
+</div>
+
+<div *ngIf= "concept=='dynamic'">
+
+    <app-dynamicrow></app-dynamicrow>
+  </div>
+
+  <span>
+    <ul *ngFor="let person of people" [ngSwitch]="person.country"> 
+
+  <li *ngSwitchCase="'UK'" 
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+  </span>
+
+</div>
+</div>

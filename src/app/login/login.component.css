@@ -1,0 +1,20 @@
+.loginbox-container{
+    margin: 0 auto;
+    padding: 5px;
+    Width:300px;
+    height: 200px;
+    border: 2px solid #000;
+
+}
+
+.loginbox-container input{
+    padding: 5px;
+    margin: 5px 5px;
+    width: 90%;
+}
+
+.loginbox-container button{
+    padding: 5px;
+    margin: 5px 5px;
+    width: 95%;
+}
