@@ -25,3 +25,20 @@
 
 
 </form>
+<table class="table table-bordered table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <td>index Id</td>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
+  </tr>
+    </thead>
+
+<tr *ngFor="let adata of arr ; let i = index">
+    <td>{{i}}</td>
+    <td>{{adata.id}}</td>
+    <td>{{adata.name}}</td>
+    <td>{{adata.email}}</td>
+</tr>
+</table>

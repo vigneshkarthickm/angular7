@@ -19,14 +19,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.mydata.getData().subscribe(res =>
+    this.mydata.getData().subscribe(res =>  
       {
-      this.arr = res;
+      this.arr = res
       for(let i=0; i < this.arr.length; i++ ){
+
+
         this.userId = this.arr[i].id;
         this.userName = this.arr[i].name;
         this.userEmail = this.arr[i].email;
-        console.log(this.userEmail,this.userId);
+
+        console.log(this.userEmail,this.userId,this.userName);
      }
      
     });
